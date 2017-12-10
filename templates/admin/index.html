@@ -1,0 +1,10 @@
+{% extends "admin/index.html" %}
+
+{% block sidebar %}
+    {{block.super}}
+    <div>
+        <a href="{% url 'incident-list' %}">
+            Incident report
+        </a>
+    </div>
+{% endblock %}

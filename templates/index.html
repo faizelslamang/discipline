@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<ul>
+    <li>
+        <a href="{% url 'admin:index' %}">
+            Add or edit students, incidents and interactions
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'incident-list' %}">
+            List of incidents
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

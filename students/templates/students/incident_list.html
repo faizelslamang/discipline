@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Incidents</h2>
+    <p><a href="{% url 'home' %}">Home</a></p>
+    <ul>
+        {% for incident in object_list %}
+            <li>
+                <a href="{% url 'admin:students_incident_change' incident.id %}">
+                    {{ incident}}
+                </a>
+            </li>
+            <ul>
+            {% for interaction in incident.interaction_set.all %}
+                <li>{{interaction}}</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+{% endblock %}

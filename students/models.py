@@ -32,11 +32,13 @@ INTERACTION_TYPES = (
 class Student(models.Model):
     first_names = models.CharField(max_length=200)
     last_name = models.CharField(max_length=50)
+    grade = models.CharField(max_length=4)
     phone_number = models.CharField(max_length=20, blank=True)
     guardian = models.CharField(max_length=50, blank=True)
     mode_of_transport = models.CharField(max_length=10,
                                          choices=TRANSPORT_TYPES,
                                          blank=True)
+
 
     def __str__(self):
         return self.first_names + ' ' + self.last_name
@@ -70,3 +72,4 @@ class Interaction(models.Model):
 
     class Meta:
         ordering = ['incident', '-date_interaction', ]
+
